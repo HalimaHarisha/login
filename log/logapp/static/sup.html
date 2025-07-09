@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subscription Manager</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #f5ceec 0%, #e0c3fc 100%);
+      overflow: hidden;
+    }
+
+    .blur-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/clean-gray-paper.png');
+      mix-blend-mode: overlay;
+      opacity: 0.2;
+      z-index: -1;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 35px;
+      width: 90%;
+      max-width: 450px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #000;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 14px;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #333;
+    }
+
+    .tooltip {
+      font-size: 12px;
+      color: #555;
+      margin-top: 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #a4508b;
+      background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-image: linear-gradient(326deg, #89216b 0%, #3a0ca3 74%);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blur-bg"></div>
+
+  <div class="form-container">
+    <h2><i class="fas fa-user-cog"></i> Manage Subscription</h2>
+    <form method="post">
+      
+
+      <div class="input-group">
+        <label for="plan"><i class="fas fa-layer-group"></i> Subscription Plan</label>
+        <select id="plan" name="plan" required>
+          <option value="Free">Free</option>
+          <option value="Basic">Basic</option>
+          <option value="Premium">Premium</option>
+        </select>
+        <div class="tooltip">Choose the plan that best fits your needs.</div>
+      </div>
+
+      <div class="input-group">
+        <label for="start_date"><i class="fas fa-calendar-alt"></i> Start Date</label>
+        <input type="date" id="start_date" name="start_date" required>
+      </div>
+
+      <div class="input-group">
+        <label for="end_date"><i class="fas fa-calendar-times"></i> End Date</label>
+        <input type="date" id="end_date" name="end_date" required>
+      </div>
+
+      <div class="input-group">
+        <label for="is_active"><i class="fas fa-toggle-on"></i> Is Active</label>
+        <select id="is_active" name="is_active" required>
+          <option value="True">Active</option>
+          <option value="False">Inactive</option>
+        </select>
+      </div>
+
+      <button type="submit"><i class="fas fa-save"></i> Save Subscription</button>
+    </form>
+  </div>
+
+</body>
+</html>
